@@ -1,16 +1,18 @@
-
-# i am the second change
-#!/usr/bin/python
+#!/usr/bin/python -tt
+#
+# Make OTU and TAX files from a BIOM file
+#
 # Graeme Fox - June 2015
 # graeme.fox@manchester.ac.uk
+#
 # Takes a BIOM file from a database (Qiita for example)
 # Converts it into separate OTU table and TAXA file
-# Tested on (L)ubuntu 15.04 only.
+# Tested on 64-bit Ubuntu 15.10 and Python 2.7
 
-import Bio, subprocess, csv, sys, re, argparse, os
-from Bio import SeqIO
+import argparse, re, csv
 
 parser = argparse.ArgumentParser(description='none')
+parser = argparse.ArgumentParser(description='Frag_length_finder')
 parser.add_argument('-i','--input1', help='Input_file', required=True)
 args = vars(parser.parse_args())
 input_file = args['input1'];
